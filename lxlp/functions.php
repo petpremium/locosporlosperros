@@ -130,6 +130,8 @@
 		wp_register_script( 'slick-js', get_template_directory_uri() . '/assets/js/slick.min.js', array( 'jquery' ), '1.0', true );
 		// isotope
 		wp_register_script( 'isotope-js', get_template_directory_uri() . '/assets/js/isotope.pkgd.js', array( 'jquery' ), '1.0', true );
+		// Script Tienda
+		wp_register_script( 'tienda-js', get_template_directory_uri() . '/assets/js/tienda.min.js', array( 'jquery' ), '1.0', true );
 		//CSS
 		//Bootstrap
 		wp_register_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
@@ -170,6 +172,7 @@
 		wp_enqueue_script('main-js');
 		wp_enqueue_script('isotope-js');
 		wp_enqueue_script('slick-js');
+		wp_enqueue_script('tienda-js');
 		if(is_page('directorios')){		
 			wp_enqueue_script('directorios-js');
 		}
@@ -181,35 +184,37 @@
 		}
 		if(is_page('busqueda-de-mascotas')){		
 			wp_enqueue_script('busqueda-js');
-		}
+		}	
 		// CSS
 		wp_enqueue_style('bootstrap');
 		wp_enqueue_style('font-awesome');
 	}
 	
-	add_action('wp_ajax_newsletter', 'newsletter_init');
-	add_action('wp_ajax_nopriv_newsletter', 'newsletter_init');
-	
-	function newsletter_init(){
+	// Usar ajax
+	add_action( 'wp_ajax_newsletter', 'newsletter_init' );
+	add_action( 'wp_ajax_nopriv_newsletter', 'newsletter_init' );
+
+	function newsletter_init() {
 		global $wpdb;
 		$nombre = $_POST['nombre'];
-		$correo = $_POST['correo'];
+		$mail = $_POST['correo'];
+		$tabla_registro = 'newsletters';
+		$datum = $wpdb->get_results("SELECT * FROM $tabla_registro WHERE correo = '" . $mail . "'");
 		
-		$mylink = $wpdb->get_row( "SELECT * FROM newsletter WHERE Correo = '".$correo."';" );
-		if ( null !== $mylink ) {
-		  // Encontro algo
-		  // Email no disposible, ya se encuentra en uso
-		  echo 0;
-		} else {
-		
-			$wpdb->insert('newsletter', array(
+	 if($wpdb->num_rows > 0) {
+		 // Ya existe el correo o el ticket
+	 	echo "Tu correo ya a sido registrado anteriormente";
+	 	die();
+	 } else{
+		$wpdb->insert($tabla_registro, 
+			array(
 				'Nombre' => $nombre,
-				'Correo' => $correo
-			));
-			echo 1;
-		}
-		
+				'Correo' => $mail
+			)
+		);
+		echo "Gracias por registrarte, ahora te llegaran nuestras Novedades";
 		die();
+		}
 	}
 	
 	function my_acf_load_field( $field ) {

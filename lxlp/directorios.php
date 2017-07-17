@@ -16,9 +16,10 @@ Template Name: Directorios
 					
 					<div class="col-md-9 serch-bar">
 						<h1>¿Qué estás buscando?</h1>
-						<form action="search-directorio" id="serch-directorio">
-							<input type="text" class="lupa" />
-							<input type="submit" class="search-btn lupa-sub" />
+						<form method="get" id="serch-directorio" action="<?php bloginfo('url'); ?>/">
+						    <input type="text" class="lupa" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="<?php _e('Buscar'); ?>...">
+						    <input type="hidden" name="post_type" value="directorio" />
+						    <button type="submit" class="search-btn lupa-sub subBtn"><?php _e('Search'); ?></button>
 						</form>
 					</div>
 				</div>

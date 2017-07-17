@@ -13,8 +13,11 @@ Template Name: Libreria
 	<div id="buscador">
 		<div class="busca text-center">
 			<p class="titulo-seccion">¿QUÉ TEMA TE INTERESA?</p>
-			<input class="antes-lupa" type="text">
-			<input class="lupa-in" type="submit">
+			<form method="get" id="search-shop" action="<?php bloginfo('url'); ?>/">
+			    <input type="text" class="lupa antes-lupa" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="<?php _e('Buscar'); ?>...">
+			    <input type="hidden" name="post_type" value="libro" />
+			    <input type="submit" id="searchsubmit" value="Buscar" class="search-btn lupa-sub subBtn lupa-in">
+			</form>
 		</div>
 	</div>
 	<div class="container biblioteca">
@@ -38,17 +41,6 @@ Template Name: Libreria
 			endwhile;
 			wp_reset_postdata();
 		?>
-	</div>
-	<div id="nav-pag">
-		<ul>
-			<li><a class="navegacion" href="#"><< Anterior </a></li>
-			<li><a class="numeros" href="#">1</a></li>
-			<li><a class="numeros" href="#">2</a></li>
-			<li><a class="numeros" href="#">3</a></li>
-			<li><a class="numeros" href="#">4</a></li>
-			<li><a class="numeros" href="#">5</a></li>
-			<li><a class="navegacion" href="#">Siguiente >></a></li>
-		</ul>
 	</div>
 </div>
 <?php get_footer(); ?>

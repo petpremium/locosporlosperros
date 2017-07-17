@@ -1,3 +1,4 @@
+</div>
 		<footer id="mastfooter" class="mini-font">
 			<div class="container">
 				<div class="row">

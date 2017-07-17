@@ -2,7 +2,32 @@ jQuery(document).ready(function($){
 	// Carrusel
 	$('.carousel-inner .item').first().addClass('active');
 	var ajaxUrl = php_array.admin_ajax;
+// ============ Obtener altura =============
+
+	var altoHeader = $('#masthead').outerHeight();
+	console.log(altoHeader);
+
+	$('#mastwrapper').css({
+		'marginTop' : altoHeader
+	});
+
+// ============ Campos Vacios buscadores =============
+
+	$("#searchsubmit, .woocommerce-product-search input[type=submit]").addClass("subBtn");
+	$("#s, .search-field").addClass("inSerch");
+	var searchBtn = $(".subBtn");
 	
+	searchBtn.on('click', function(){
+		var busq = $(".inSerch").val();
+		if (!busq){
+			$(".inSerch").attr("placeholder", "Indicanos que buscar");
+			$(".inSerch").addClass('your-class');
+			$(".inSerch").focus();
+			return false;
+		} else{
+			
+		}
+	});
 
 //=============Busqueda============
 
@@ -65,36 +90,59 @@ jQuery(document).ready(function($){
 	  centerMode: true,
 	  focusOnSelect: true
 	});
-		
-	// Suscripción al Newsletter
-	$('#suscribe').on('submit', function(event){
+	
+	
+		//Suscripcion a Newsletter
+	var ajaxUrl = php_array.admin_ajax,
+		formulario = $('#suscribe');
+	
+	formulario.on('submit', function(){
 		event.preventDefault();
-		// Variables
-		var accion = $(this).attr('action'),
-			nombre = $('#nombre').val(),
-			correo = $('#correo').val(),
+		
+		var mail = $('#correo').val(),
+			nombre = ('#nombre').val(),
+			btnsub = $('.send-button'),
 			datos = {
-				action: accion,
+				action: newsletter,
 				nombre: nombre,
 				correo: correo
 			};
-		$.ajax({
-			url: ajaxUrl,
-			data: datos,
-			type: 'POST',
-			cache: false,
-			beforeSend : function(){
-				$('#suscribe').fadeOut();	
-			},
-			success: function(data){
-				if(data == 1){
-					$('.formulario-news').html('Registrado Exitosamente');
-				} else {
-					alert('El Correo ya se encuentra en uso, intenta con uno nuevo');
-					$('#suscribe').fadeIn();	
+			
+		$('.send-button').attr('disabled', 'disabled');
+		
+		if(!mail){
+			
+			alert("Escribe Tu Nombre");
+			('#nombre').focus();
+			$('.send-button').removeAttr('disabled');
+			
+		} else if(!nombre){
+			
+			alert("Escribe Tu Correo");
+			$('#correo').focus();
+			$('.send-button').removeAttr('disabled');
+			
+		} else{
+			$.ajax({
+				url : ajaxUrl,
+				type : 'POST',
+				data : datos,
+				cache : false,
+				beforeSend : function(){
+					alert("Mandando");
+				},
+				
+				success : function(respuesta){
+					alert(respuesta);
+					console.log("Exito");
+					location.reload();
+				},
+				
+				error : function(){
+					console.log("Error");
 				}
-			}
-		});
+			});
+		}
 	});
 	
 	// Menú en mobile

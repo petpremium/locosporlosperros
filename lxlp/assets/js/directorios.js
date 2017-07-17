@@ -1,4 +1,4 @@
-jQuery(document).ready(function(){				 
+jQuery(document).ready(function(){
 	var loader = $('.loader-ajax');
 	loader.hide();
 	$('#directorio-filter a').click(function(event){

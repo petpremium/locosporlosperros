@@ -24,17 +24,28 @@ get_header( 'shop' ); ?>
 	
 	<div id="store-head">
 		<div class="carrusel-tienda">
+			<?php
+				$args = array(
+					'page_id' => 457
+				);
+				$query = new WP_Query($args);
+				while($query->have_posts()) : $query->the_post();
+			?>
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 			
-			  <!-- Wrapper for slides -->
-			  <div class="carousel-inner" role="listbox">
-			    <div class="item active">
-			      <img src="<?php bloginfo('template_url'); ?>/assets/img/dummy/shampoo-para-perros-4.jpg" class="img-responsive" alt="...">
-			      <div class="carrusel-caption">
-			        Aprovecha el 2x1 en Shampoo y Jabones
-			      </div>
-			    </div>
-			  </div>
+				<!--Slides-->
+				<div class="carousel-inner" role="listbox">
+				<?php 
+					if(get_field('slider_tienda')): while(has_sub_field('slider_tienda')):;  
+				?>
+				    <div class="item elemento">
+				    	<img src="<?php the_sub_field("imagen_tienda"); ?>" class="img-responsive" alt="...">
+						<div class="carrusel-caption">
+				        	<p><?php the_sub_field("texto_de_la_promocion"); ?></p>
+				    	</div>
+				    </div>
+			    <?php endwhile; endif; ?>	
+				</div>
 			
 			  <!-- Controls -->
 			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -46,6 +57,8 @@ get_header( 'shop' ); ?>
 			    <span class="sr-only">Next</span>
 			  </a>
 			</div>
+			
+			<?php endwhile; wp_reset_postdata(); ?>
 		</div>
 		<div class="store-categories">
 			 <?php wp_nav_menu( array('menu' => 'Cat Tienda' )); ?>
@@ -62,7 +75,7 @@ get_header( 'shop' ); ?>
 			do_action( 'woocommerce_before_main_content' );
 		?>
 		
-		<div class="col-md-2 widgets-tienda">
+		<div class="col-md-3 widgets-tienda">
 				<?php
 					/**
 					 * woocommerce_sidebar hook.
@@ -72,7 +85,7 @@ get_header( 'shop' ); ?>
 					do_action( 'woocommerce_sidebar' );
 				?>
 		</div>
-		<div class="col-md-10 tienda">
+		<div class="col-md-9 tienda">
 		    <header class="woocommerce-products-header">
 		
 				<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>

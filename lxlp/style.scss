@@ -18,6 +18,21 @@ Author URI: http://kikemonk.com/
 	padding-right: $padding-v;
 }
 
+input, button{
+	outline: none !important;
+}
+
+#search-shop{
+	.lupa-sub{
+		height: 33px;
+		width: 50px;
+	}
+}
+
+.your-class::-webkit-input-placeholder {
+    color: red
+}
+
 #masthead{
 	@extend .full; 
 	z-index: 2;
@@ -25,6 +40,8 @@ Author URI: http://kikemonk.com/
 	background: url(assets/img/fondo.png)no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
+	position: absolute;
+	top: 0;
 	.logo{
 		float: left;
 		width: 180px;
@@ -55,6 +72,11 @@ Author URI: http://kikemonk.com/
 	}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 }
 
+
+.serv-icon{
+	width: 80%;
+}
+
 .right{
 	background-image: none !important;
 	span{
@@ -72,7 +94,6 @@ Author URI: http://kikemonk.com/
 }
 .single-post{
 	@extend .full;
-	padding: 20px 0;
 	.post-thumbnail{
 		position: relative;
 		max-height: 600px;
@@ -747,6 +768,7 @@ Author URI: http://kikemonk.com/
 					 	float: left;
 					}
 					.lupa-sub{
+						border: none;
 					 	float: left;
 					 	background: url(assets/img/directorio/lupa.jpg)no-repeat;
 					 	height: 33px;
@@ -1249,6 +1271,7 @@ Author URI: http://kikemonk.com/
 
 .titulo-posts{
 	border-bottom: 2px solid #ffcc32;
+	font-size: 25px;
 	
 }
 
@@ -1301,6 +1324,32 @@ Author URI: http://kikemonk.com/
 		width: 120px;
 	}
 	@extend .horizontal-menu
+}
+// Search Page
+#search-page{
+	#search-wrapper{
+		margin-top: 150px;
+		.result-ind{
+			margin-bottom: 10px;
+			padding: 15px;
+			border-bottom: 2px solid $amarilloPrimario;
+			article{
+				img{
+					margin: 10% 0 0 0;
+				}
+				a{
+					text-decoration: none;
+					color: $amarilloPrimario;
+				}
+				.read-more-btn{
+					background: $amarilloPrimario;
+					color: $blanco;
+					padding: 8px 10px;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
 }
 
 // Tienda
@@ -1459,7 +1508,7 @@ Author URI: http://kikemonk.com/
 		position: relative;
 		.item{
 			img{
-				max-height: 500px;
+				width: 100%;
 			}
 			.carrusel-caption{
 				width: 45%;
@@ -1487,9 +1536,12 @@ Author URI: http://kikemonk.com/
 			list-style: none;
 			padding: 0;
 			margin: 0;
-			text-align: center;
+			text-align: center;    
+			float: left;
+			margin: 0 0 0 20%;
 			li{
 				display: inline-block;
+				float: left;
 				&:last-child a{
 					border: none;
 				}

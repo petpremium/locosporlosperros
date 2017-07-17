@@ -8,17 +8,19 @@
 		<?php wp_head(); ?>
 		<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>">
 		<link rel="shortcut icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+		<div id="fb-root"></div>
+		<script>
+			(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.8";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
 	</head>
 	
 	<body <?php body_class(); ?>>
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.8";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
 	<!-- Inicio Header -->
 	<header id="masthead">
 		<div class="container">
@@ -38,3 +40,5 @@
 		</div>		
 	</header>
 	<!-- Fin Header -->
+	
+	<div id="mastwrapper">
