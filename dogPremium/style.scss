@@ -1,0 +1,2473 @@
+/*
+Theme Name:  Locos x los perros
+Description: Comunidad de Amantes de Perros
+Version: 1.0
+Author: Enrique Contreras
+Author URI: http://kikemonk.com/
+*/
+@import 'assets/css/ajustes';
+
+
+@mixin padding-h($padding){
+	padding-top: $padding;
+	padding-bottom: $padding;
+}
+
+@mixin padding-v($padding-v){
+	padding-left: $padding-v;
+	padding-right: $padding-v;
+}
+
+body{
+	background: $blanco;
+}
+
+a{
+	text-decoration: none !important;
+}
+
+.acf-image-uploader{
+	a{
+		color: $amarilloPrimario !important;
+	}	
+}
+
+.acf-form-submit{
+	.acf-button{
+		background: #f44336;
+		color: $blanco;
+		box-shadow: none;
+		box-sizing: none !important;
+		border-radius: 5px;
+		padding: 10px 8px;
+		border: none;
+		transition: .5s;
+		&:hover{
+			box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36);
+		}
+	}
+}
+
+.registro-btn{
+	background: $amarilloPrimario;
+	color: $blanco !important;
+	box-shadow: none;
+	border-radius: 5px;
+	padding: 10px 0;
+	width: 80px !important;
+	border: none;
+	transition: .5s;
+	&:hover{
+		box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36);
+		background: $amarilloPrimario;
+	}
+}
+
+.registro-btn-a{
+	background: $amarilloPrimario;
+	color: $blanco !important;
+	box-shadow: none;
+	border-radius: 5px;
+	padding: 10px;
+	border: none;
+	transition: .5s;
+	text-decoration: none;
+	&:hover{
+		box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36);
+	}
+}
+
+p{
+	line-height: 1;
+}
+
+label{
+	left: 0;
+}
+
+.is-focused{
+	label{
+		color: $negro !important;
+	}
+	.form-control{
+		background-image: linear-gradient($amarilloPrimario, $amarilloPrimario), linear-gradient(#D2D2D2, #D2D2D2) !important;
+	}
+}
+
+.carousel-control{
+	width: 10% !important;
+}
+
+input, button, a, select{
+	outline: none !important;
+}
+
+#search-shop{
+	.lupa-sub{
+		height: 33px;
+		width: 50px;
+	}
+}
+
+.your-class::-webkit-input-placeholder {
+    color: red
+}
+
+.foro-img{
+	width: 100%;
+}
+
+#masthead{
+	@extend .full; 
+	z-index: 2;
+	padding: 10px 0;
+	background: url(assets/img/fondo.png)no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	position: absolute;
+	top: 0;
+	.logo{
+		float: left;
+		width: 95px;
+	}   
+	#mastmenu{
+		text-align: right;
+		margin: 30px 0;
+		@extend .horizontal-menu;
+		#menu-principal{
+			display: flex;
+		    justify-content: center;
+		    align-content: center;
+		    align-items: center;
+		    text-align: center;
+		}
+		li{
+			a{
+				color: #000;
+				font-size: 1.4rem;
+				font-weight: bold;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				margin: 0 10px;
+				transition: .1s;
+				border-bottom: 2px solid transparent;
+				padding-bottom: 3px;
+				width: 130px;
+				&:hover{
+					color: $negro;
+					text-decoration: none;
+					border-bottom: 2px solid $amarilloPrimario;
+				}
+			}
+		}
+		.registrer-trigger{
+			margin: -40px -20px 0 0;
+			font-size: 30px;
+			&:hover{
+				color: $amarilloPrimario;
+				transform: scale(1.2);
+				transition: .5s; 
+			}
+		}
+		.form-box{
+			display: none;
+			width: 20%;
+			padding: 15px;
+			height: auto;
+			background: #E5E5E5;
+			border-radius: 10px;
+			position: absolute;
+			right: 5%;
+			border: 1px solid $amarilloPrimario;
+			.form-registrer{
+				background: $blanco;
+				padding: 15px;
+				border-radius: 10px;
+				.user-data{
+					text-align: center;
+					h1{
+						font-size: 18px;
+						color: $amarilloPrimario;
+					}
+					a{
+						color: $amarilloPrimario;
+					}
+				}
+				#loginform{
+					margin: 0;
+				}
+				a{
+					color: $negro;
+				}
+			}
+		}
+	}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+}
+
+.vistaDividida{
+	margin: 50px 0;
+	float: left;
+	width: 100%;
+	h3{
+		text-align: center;
+	}
+	h6{
+		text-align: center;
+		color: $amarilloPrimario;
+	}
+	.formulario{
+		padding: 15px;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    align-content: center;
+	    form{
+		    width: 80%;
+	    }
+	}
+}
+
+.serv-icon{
+	width: 80%;
+}
+
+.right{
+	background-image: none !important;
+	span{
+		color: $amarilloPrimario;
+	}
+}
+.left{
+	background-image: none !important;
+	span{
+		color: $amarilloPrimario;
+	}
+}
+.copy-grid{
+	z-index: -1;
+}
+.single-post{
+	@extend .full;
+	.post-thumbnail{
+		position: relative;
+		max-height: 600px;
+		overflow: hidden;
+		width: 100%;
+		margin-bottom: 20px;
+		img{
+			width: 100%;
+		}
+	}
+	
+	.categories{
+		margin-top: 30px;
+		p{
+			color: $orange;
+			font-size: 1.8rem;
+			padding-bottom: 1rem;
+		}
+		a{
+			padding: 10px 15px;
+			border: 2px solid $orange;
+			margin: 0 30px;
+			display: inline-block;
+			font-size: 1.5rem;
+		}
+	}
+	
+	.post-contenido{
+		width: 90%;
+		margin: 30px 0 0 4.5%;
+		background: white;
+		padding: 30px;
+		display: block;
+		position: relative;
+		border-radius: 4px;
+		z-index: 3;
+		float: left;
+		box-shadow: 0 0 20px #ccc;
+	}
+	
+	.post-contenido-no-thumb{
+		width: 100%;
+		background: white;
+		padding: 30px;
+		display: block;
+		position: relative;
+		border-radius: 10px 10px 0 0;
+		z-index: 3;
+		float: left;
+		box-shadow: 0 0 20px #ccc;
+	}
+	
+	.post-titulos{
+		position: absolute;
+		top: 25%;
+		width: 100%;
+		text-align: center;
+		z-index: 3;
+		h2{
+			
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			color: white;
+			text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+		}
+		
+		h4{
+			
+			a{
+				color: $orange;
+			}
+		}
+	}
+	
+	.post-title{
+		text-transform: uppercase;
+		border-bottom: 2px solid $amarilloPrimario;
+		padding-bottom: 3px;
+	}
+	
+	.post-entry, .post-tags{
+		h3{
+			
+			border-bottom:  2px solid $amarilloPrimario;
+			padding-bottom: 3px;
+			text-transform: uppercase;
+			color: $orange;
+		}
+	}
+	
+	.post-tags{
+		a{
+			display: inline-block;
+			padding: 5px;
+			background: $amarilloPrimario;
+			color: white;
+			text-transform: uppercase;
+			transition: .3s;
+			
+			&:hover{
+				background: $orange;
+				text-decoration: none;
+				box-shadow: 2px 2px 3px #000;
+			}
+		}
+	}
+}
+
+.loader-ajax{
+	position: absolute;
+	width: 100%;
+	padding: 140px;
+	z-index: 3;
+}
+.widget{
+	float: left;
+	width: 100%;
+	margin-bottom: 15px;
+	.widget-title{
+		font-weight: bold;
+		text-transform: uppercase;
+		padding-bottom: 4px;
+		border-bottom:  2px solid $amarilloPrimario;
+		
+	}
+	label{
+		display: none;
+	}
+	input{
+
+		border: 2px solid #ffcf32;
+	}
+	input[type=text]{
+	 	height: 33px;
+	 	width: 168px;
+	 	float: left;
+	}
+	
+	input[type=submit]{
+	 	float: left;
+	 	background: url(assets/img/directorio/lupa.jpg)no-repeat;
+	 	height: 33px;
+	 	width: 50px;
+	 	background-size: 100%;
+	 	text-indent: -9999px;
+	}
+	
+	ul{
+		list-style: none;
+		padding: 10px 0;
+		margin: 0;
+		li{
+			line-height: 18px;
+			padding: 3px;
+			border-bottom: 1px dashed #e1e1e1;
+			a{
+				
+				color: black;
+				text-decoration: none;
+				&:hover{
+					color: $amarilloPrimario;
+				}
+			}
+		}
+	}
+}
+/*======= Modificaciones en single-default=======*/
+.post-author{
+	width: 100%;
+	float: left;
+	clear: both;
+	padding: 20px 0;
+	.titulo-post-author{
+		text-transform: uppercase;
+		border-bottom: 2px solid $amarilloPrimario;
+		padding-bottom: 3px;
+		color: $amarilloPrimario;
+		margin-bottom: 10px;
+	}
+	.info-author{
+		.redes-sociales{
+			display: inline-block;
+			ul{
+				font-size: 25px;
+				list-style: none;
+			}
+			a{
+				
+				text-align: center;
+				padding: 20px 0;
+				color: $amarilloPrimario;
+			}
+
+		}
+		.img-author{
+			display: inline-block;
+			img{
+				width: 100%;
+			}
+		}
+		.bio-author{
+			display: inline-block;
+			h1{
+				margin-bottom: 25px;
+				color: $amarilloPrimario;
+			}
+		}
+	}
+}
+
+#home{
+	@extend .full;
+	#imagen-principal{
+		a{
+			color: white;
+		}
+		position: relative;
+		img{
+			width: 100% !important;
+		}
+	}
+	
+	.texto-imagen{
+		position: absolute;
+		right: 0;
+		top:40%;
+		width: 33%;
+		background: rgba(170,170,170, .5);
+		padding: 10px 20px;
+		h2{
+			color: $amarilloPrimario;
+			font-weight: 400;
+			border-bottom: 2px solid $amarilloPrimario;
+			padding-bottom: 3px;
+		}
+		p{
+			
+		}
+	}
+}
+
+#introduccion{
+	@extend .full;
+	background: url('assets/img/fondo.jpg');
+	padding: 30px 0;
+	color: $orange;
+	text-align: center;
+	h2{
+		text-transform: uppercase;
+	}
+	p{
+		color: $negro;
+	}
+}
+
+#novedades{
+	@extend .full;
+	padding: 30px 0;
+	.titulo{
+		text-align: center;
+		color: $amarilloPrimario;
+		text-transform: uppercase;
+		border-bottom: 1px solid $amarilloPrimario;
+		margin-bottom: 20px;
+	}
+	
+	#post-wraps{
+		@extend .full;
+		.nota{
+			position: relative;
+			overflow: hidden;
+			img{
+				position: relative;
+				z-index: 1;
+				transition: .3s;
+			}
+			
+			.titulos{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				z-index: 3;
+				text-align: center;
+				width: 100%;
+				padding: 0 25px;
+				height: 100%;
+				top: 0;
+				flex-direction: column;
+				a{
+					color: white;
+					transition: .3s;
+					font-weight: bold;
+					&:hover{
+						color: $amarilloPrimario;
+						text-decoration: none;
+					}
+				}
+				.cat-name{
+					a{
+						background: url('assets/img/fondo.jpg');
+						color: $amarilloPrimario;
+						padding: 1rem 1.5rem;
+						font-weight: 400;
+						letter-spacing: 2px;
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+		
+		.read-more{
+			padding: 20px 0;
+		}
+	}
+}
+
+.amarillo{
+	color: $amarilloPrimario;
+}
+
+#cuerpo{
+	@extend .full;
+}
+		
+.mask{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	background: rgba(0,0,0,.4);
+	top: 0;
+	left: 0;
+}
+
+/* ======  BLOG ====== */
+#blog{
+	@extend .full;
+	
+	.suscribe{
+		margin: 20px 0;
+		@include padding-v(30px);
+		@include padding-h(10px);
+		background: $blanco;
+		color: $grisUClaro;
+		text-align: center;
+	}
+	
+	#suscribe{
+		margin: 0;
+	}
+	
+	.grid{
+		@extend .full;
+		margin: 20px 0;
+		.featured-posts{
+			position: relative;
+			.datos-del-post{
+				position: absolute;
+				bottom: 0;
+				z-index: 3;
+				padding: 5px 10px;
+				.category-name{
+					a{
+						display: inline-block;
+						color: white;
+						background: $amarilloPrimario;
+						text-transform: uppercase;
+						padding: 8px;
+						transition: .4s;
+						&:hover{
+							text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000;
+							text-decoration: none;
+						}
+					}
+				}
+				h2{
+					a{
+						color: white;						
+						text-transform: uppercase;
+						letter-spacing: 1px;
+						transition: .4s;
+						&:hover{
+							color: $amarilloPrimario;
+						}
+					}
+				}
+				
+				h4{					
+					color: white;
+					font-weight: 300;
+				}
+			}
+		}
+	}
+
+	.copy-grid{
+		@extend .full;
+		margin: 20px 0;
+		.featured-posts{
+			position: relative;
+			.datos-del-post{
+				position: absolute;
+				bottom: 0;
+				z-index: 3;
+				padding: 5px 10px;
+				.category-name{
+					a{
+						display: inline-block;
+						color: white;
+						background: $amarilloPrimario;
+						text-transform: uppercase;
+						padding: 8px;
+						transition: .4s;
+						&:hover{
+							text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000;
+							text-decoration: none;
+						}
+					}
+				}
+				h2{
+					a{
+						color: white;						
+						text-transform: uppercase;
+						letter-spacing: 1px;
+						transition: .4s;
+						&:hover{
+							color: $amarilloPrimario;
+						}
+					}
+				}
+				
+				h4{					
+					color: white;
+					font-weight: 300;
+				}
+			}
+		}	
+	}
+	
+	.posts-wrap{
+		.post-list{
+			@include padding-h(15px);
+			clear: both;
+			margin-bottom: 10px;
+			border-bottom: 2px solid $amarilloPrimario;
+			width: 100%;
+			float: left;
+			&:last-child{
+				border: none;
+			}
+			h2{
+				text-transform: uppercase;
+				
+			}
+			
+			.read-more{
+				color: white !important;
+				text-transform: uppercase;
+				background: $amarilloPrimario;
+				padding: 5px 18px;
+				display: inline-block;
+				transition: .3s;
+				&:hover{
+					background: $orange;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+		
+}
+
+/* ===== Menu Secundario ====== */
+
+#sec-menu{
+	background: url('assets/img/fondo.jpg');
+	margin-bottom: 8px;
+	@extend .horizontal-menu;
+	.category-titulo{
+		
+		color: $negro;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		text-shadow: 1px 1px 0 $orange, 1px -1px 0 $orange, -1px -1px 0 $orange, -1px 1px 0 $orange;
+	}
+	ul{
+		@include padding-h(10px);
+		text-align: center;
+		li{
+			@include padding-h(5px);
+			@include padding-v(25px);
+			border-right: 1px solid #000;
+			&:last-child{
+				border: none;
+			}
+			
+			a{
+				color: $negro;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				text-decoration: none;
+				&:hover{
+					color: $amarilloPrimario;
+				}
+				
+			}
+		}
+	}
+}
+
+/* ===== Single Post ======= */
+
+#mastfooter{
+	background: #292727;
+	@extend .full;
+	padding: 20px 0;
+	text-transform: uppercase;
+	.foot-left{
+		color: $amarilloPrimario;
+	}
+	
+	.foot-right{
+		a{
+			color: white;
+			&:hover{
+				color: $amarilloPrimario;
+			}
+		}
+		color: white;
+	}
+}
+
+.acf-map {
+	width: 100%;
+	height: 200px;
+	border: #ccc solid 1px;
+	margin: 20px 0;
+}
+
+.acf-map-perrito {
+	width: 100%;
+	height: 400px;
+	border: #ccc solid 1px;
+	margin: 20px 0;
+}
+
+.acf-map-perrito img {
+   max-width: inherit !important;
+}
+
+/* fixes potential theme css conflict */
+.acf-map img {
+   max-width: inherit !important;
+}
+
+/* ======= LIBRERIA =======*/
+
+/* ======= Foro ========== */
+#af-wrapper{
+	.post-author, .post-message{
+		display: inline-block;
+	}
+	
+	.post-author{
+		width: 15%;
+	}
+	
+	.post-message{
+		width: 85%;
+	}
+}
+/* ======= cuerpo entero =======*/
+
+#lib{
+	@extend .full;
+	/*======imagen destacada======*/
+	.img-destacada{
+		border-top: 5px solid #ffcc32;
+	}
+	/*====== Input's y buscador=====*/
+	#buscador{
+		background: url(assets/img/library/QueTemaBG.png);
+		display: block;
+		padding:30px 0;
+		.busca{
+			width: 100%;
+			margin-top: 10px;
+			p{
+				color:white;
+				font-weight: bold;
+				display: inline-block;
+				margin-right: 10px;
+				
+			}
+			input{
+				display: inline-block;
+				height: 30px;
+				border: 2px solid white;
+			}
+			.antes-lupa{
+				background: transparent;
+				width: 300px;
+			}
+			.lupa-in{
+				background: url(assets/img/library/LUPA.png)no-repeat;				
+				background-size: cover;
+ 				text-indent: -9999px;
+ 				width: 40px;
+ 				margin-right: -5px;
+			}
+		}		
+	}
+	/*=========imagenes en biblioteca=========*/
+	.biblioteca{
+		margin-top: 50px;
+	}
+}
+.leyenda{
+	text-align: right;
+	padding: 0 15px;
+	span{
+		color: $amarilloPrimario;
+		font-size: 12px;
+	}
+}
+.leyenda-baja{
+	text-align: center;
+	padding: 0 15px;
+	margin: 10px 0 30px;
+	
+	span{
+		color: $amarilloPrimario;
+		font-size: 18px;
+	}
+}
+
+/* ======= Directorios ======= */
+#directorio-filter{
+	width: 100%;
+	background: $amarilloPrimario;
+	text-align: center;
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		li{
+			display: inline-flex;
+			margin: 0 50px;
+			font-size: $titleFont;
+			justify-content: center;
+			align-items: center;
+			a{
+				color: black;
+				text-transform: uppercase;
+				padding: 8px;
+				text-align: center;
+				transition: .3s;
+				&:hover{
+					text-decoration: none;
+				}
+				.strong{
+					
+					font-weight: bold;
+				}
+				
+				.light{
+					
+					font-weight: 300;
+				}
+			}
+		}
+	}
+}
+/* ======= Directorios =======*/
+.directorio{
+	position: relative;
+	.container{
+		.flex{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.row{
+			.serch-bar{
+				h1{
+					color: #ffcf32;
+					text-transform: uppercase;
+				}
+				#serch-directorio{
+					input{
+						border: 2px solid #ffcf32;
+					}
+					.lupa{
+					 	height: 33px;
+					 	width: 410px;
+					 	float: left;
+					}
+					.lupa-sub{
+						border: none;
+					 	float: left;
+					 	background: url(assets/img/directorio/lupa.jpg)no-repeat;
+					 	height: 33px;
+					 	width: 50px;
+					 	background-size: 100%;
+					 	text-indent: -9999px;
+					}
+				}
+			}
+		}
+	}
+	.directorio-wrap{
+		.element-dir{
+			margin: 10px 0;
+			padding: 0 10px;
+			a{
+				text-decoration: none;
+				.contenido{
+					position: relative;
+					color: $amarilloPrimario;
+					overflow: hidden;
+					height: 180px;
+					img{
+						width: 100%;
+					}
+					.mask{
+						background: rgba(0,0,0,0.6);
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						h4{
+							text-transform: uppercase;
+							font-size: $titleFont;
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* ======= Busqueda =======*/
+
+#busq{
+	
+	.lista-perros{
+		margin-bottom: 15px;
+		position: relative;
+		
+	
+		.foto-perro{
+			width: 255px;
+			height: 255px;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+			img{
+				transition: .2s;
+				&:hover{
+					transform: scale(1.2);
+				}
+			}
+		}
+		
+		.info-perro{
+			background: #f1f1f1;
+			padding: 13px;
+			h2{
+				
+			}
+			h2, h4{
+				margin-top: 0;
+				a{
+					color: $amarilloPrimario;
+				}
+			}
+		}
+	}
+	
+	a:hover{
+		text-decoration: none;
+	}
+	@extend .full;
+	/*======imagen destacada======*/
+	.img-destacada-busq{
+		border-top: 5px solid #ffcc32;
+		position: relative;
+		.titulos{
+			border-top: 5px solid #ffcc32;
+			text-shadow: 2px 2px 3px black;
+			display: inline-block;
+			position:absolute;
+			top: 42%;
+
+			span{
+				color: #ffcc32;
+			}
+			h1{
+				color: white;
+				text-transform: uppercase;
+			}
+			a{
+				text-shadow: none;
+				box-shadow: 2px 2px 3px black;
+				color: black;
+				background: #ffcc32;
+				padding: 8px 25px;
+				font-weight: bold;
+			}
+		}
+
+		.t1{
+			left: 0;
+
+			a{
+				margin-left: 100px;
+			}
+
+			h1{
+				margin-left: 100px;
+			}
+		}
+
+		.t2{
+			right: 0;
+
+			a{
+				margin-right: 100px;
+			}
+
+			h1{
+				margin-right: 100px;
+			}
+		}
+	}
+
+	.separacion{
+		padding: 20px 0;
+		font-weight: bold;
+	}
+	
+	.ultimas-reportadas{
+		text-align: center;
+		font-weight: bold;
+		p{
+			margin: 15px 0;
+		}
+	}
+	/*========Menu Horizontal========*/
+	#nav-pag-busq{
+		margin: 20px 0;
+		text-align: center;		
+		a{
+			background: #ffcc32;
+			display: block;
+
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			text-decoration: none;
+			color: black;		
+		}
+
+		a:hover{
+			text-decoration: none;
+		}
+		.numeros{
+			width: 30px;
+		}
+		.navegacion{
+			width: 120px;
+		}
+		@extend .horizontal-menu
+	}
+}
+
+/* ======= BUSQUEDA INDIVIDUAL =======*/
+#principal{
+	@extend .full;
+	border-top: 3px solid #ffcc32;
+	#parte-superior{
+		margin-top: 20px;
+		#galeria{
+			
+		}
+
+		#barra-lateral{
+			.texto{
+				h1{
+					color: #ffcc32;
+					font-weight: bold;
+				}
+				span{
+					font-weight: bold;					
+				}
+			}
+			.texto-abajo{
+				background: #ffcc32;
+				padding: 10px 0;
+				text-align: center;
+				border-radius: 10px;
+				span{
+					font-weight: bold;
+				}
+
+				.t-abajo{
+					display: inline-block;
+					font-size: $baseFont;
+					font-weight: bold;
+				}
+
+				.izquierda{
+				}
+
+				.derecha{
+					text-align: left;
+					.icono{
+						display: inline-block;
+						margin-right: 10px;
+					}
+
+					ul{
+						list-style: none;
+						p{
+							display: inline-block;
+						}
+					}
+				}
+			}
+		}	
+	}
+	
+
+	#mapa{
+		margin-top: 30px;
+		width: 100%
+	}
+
+	.link-abajo{
+		width: 100%;
+		padding: 15px;
+		text-align: center;
+		margin: 30px 0;
+		a{
+			background: #ffcc32;
+			padding: 15px;
+			border-radius: 10px;
+			color: black;
+		}
+		a:hover{
+			text-decoration: none;
+			color: black;
+		}
+	}
+}
+
+
+/* ======= Botones ======== */
+
+.input-btn{
+	padding: 8px 20px;
+	margin-right: 10px;
+	
+	border: none;
+	font-weight: 100;
+}
+
+.send-button{
+	text-transform: uppercase;
+	color: black;
+	background: $amarilloPrimario;
+	border: none;
+	@include padding-v(20px);
+	@include padding-h(8px);
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+#hidden-form{
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: fixed;
+	background: rgba(0,0,0,.5);
+	z-index: 10;
+	top: 0;
+	left: 0;
+	overflow: auto;
+}
+
+.formulario-oculto{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	
+	
+	.forma{
+		width: 60%;
+		padding: 30px;
+		background: white;
+		position: relative;
+		.cerrar-formulario{
+			position: absolute;
+			right: 0;
+			top:  10px;
+			right: 10px;
+			color: $amarilloPrimario;
+			
+			transition: .3s;
+			&:hover{
+				text-decoration: none;
+			}
+		}
+		
+		.form-title{
+			color: $amarilloPrimario;
+			text-transform: uppercase;
+			
+			padding-top: 0;
+			margin-top: 0;
+			&:after{
+				content: "------------------";
+			}
+		}
+		
+		form{
+			td{
+				padding: 3px 5px;
+				vertical-align: top;
+			}
+			
+			label{
+				
+				font-weight: 300;
+			}
+			
+			p{
+				font-weight: 300;
+				
+				padding: 4px 0;
+			}
+			
+			textarea{
+				border-width: 1px;
+				border-color: initial;
+				border-image: initial;
+				border-color: #CCCCCC;
+				padding: 1px;
+				background-color: white;
+			}
+			
+		}
+	}
+}
+
+/* ====== Ajustes nota individual  =======*/
+
+.single-post{
+	.post-contenido{
+		box-shadow: 0 0 40px #534E4E;
+		.post-author{
+			.titulo-post-author{
+				h1{
+					
+				}
+			}
+			.info-author{
+				.redes-sociales{
+					ul{
+						li{
+							a{
+								
+								padding: 10px 0;
+							}
+						}
+					}
+				}
+				.img-author{
+					img{
+						margin-top: 5px;
+						width: 125px;
+					}
+				}
+				.bio-author{
+					h1{
+						
+					}
+				}
+			}
+		}
+		.post-tags{
+			a{
+				padding: 3px 6px;
+				
+			}
+		}
+	}
+	.titu-comentarios{
+		h3{
+			
+			border-bottom:  2px solid $amarilloPrimario;
+			padding-bottom: 3px;
+			text-transform: uppercase;
+			color: $orange;
+		}
+	}
+}
+
+/* ====== Comentarios ====== */
+.comentarios{
+	h3{
+		display: none;
+	}
+	.commentlist{
+		list-style: none;
+		margin-top: 30px;
+		ul{
+			list-style: none;
+		}
+		.vcard{
+			img{
+				border-radius: 100%;
+				margin-top: 10px;
+				width: 45px;
+				height: 45px;
+			}
+			.fn{
+				font-weight: bold;
+				margin-left: 25px;
+			}
+			.says{
+				display: none;
+			}
+		}
+		.comment-meta{
+			margin-left: 75px;
+			a{
+				text-decoration: none;
+				color: #f3b610;
+			}
+		}
+		p{
+			margin-left: 75px;
+		}
+		.reply{
+			margin-left: 75px;
+			.comment-reply-link{
+				color: black;
+				text-decoration: none;
+			    background: #ffcc32;
+			    padding: 7px 13px;
+			    text-transform: uppercase;
+			    
+			}
+			.comment-reply-link:hover{
+				color: white;
+			    background: #ffcc32;
+			    padding: 7px 13px;
+			    text-transform: uppercase;
+			    
+			}			
+		}
+	}
+	.comment-respond{
+		.logged-in-as{
+			margin-left: 100px;
+			a{
+				text-decoration: none;
+				color: #f3b610;
+			}
+		}
+		.comment-form-comment{
+			label{
+				display: none;
+			}
+			#comment{
+				width: 100%;
+			}
+		}
+		.form-submit{
+			text-align: right;
+			.submit{
+				border: none;
+			    background: #ffcc32;
+			    padding: 7px 11px;
+			    
+			    text-transform: uppercase;
+			}
+			.submit:hover{
+				border: none;
+			    background: #ffcc32;
+			    padding: 7px 11px;
+			    
+			    text-transform: uppercase;
+			    color: white;
+			}
+		}
+	}
+}
+
+/* ====== GLOBALES ====== */
+#ajax-directorio{
+	margin: 30px 0px;
+}
+.dir-ind{
+	padding: 30px;
+	margin: 10px 5px;
+	min-height: 610px;
+	position: relative;
+	.elem-content{
+		.boton-general{
+			position: absolute;
+			bottom: 30px;
+			color: $amarilloPrimario;
+		}
+	}
+}
+.lib-ind{
+	min-height: 400px;
+}
+.fondo-nota{
+	background:#f7f7f7;
+	padding: 30px;
+	margin: 10px 5px;
+}
+
+.titulo-posts{
+	border-bottom: 2px solid #ffcc32;
+	font-size: 25px;
+	
+}
+
+.subtitulo-posts{
+	a{
+		color: $orange;
+	}
+}
+			
+.boton-general{
+	background: url('assets/img/fondo.jpg');
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	width: 120px;
+	text-align: center;
+	text-decoration: none;
+	color: $amarilloPrimario;
+	letter-spacing: 2px;
+}
+
+.boton-general:hover{
+	text-decoration: none;
+}
+
+.mob-only, #wpadminbar{
+	display: none;
+}
+/*========Menu Horizontal========*/
+#nav-pag{
+	margin: 20px 0;
+	text-align: center;		
+	a{
+		background: #ffcc32;
+		display: block;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		text-decoration: none;
+		color: black;		
+	}
+
+	a:hover{
+		text-decoration: none;
+	}
+	.numeros{
+		width: 30px;
+	}
+	.navegacion{
+		width: 120px;
+	}
+	@extend .horizontal-menu
+}
+// Search Page
+#search-page{
+	#search-wrapper{
+		margin-top: 150px;
+		.result-ind{
+			margin-bottom: 10px;
+			padding: 15px;
+			border-bottom: 2px solid $amarilloPrimario;
+			article{
+				img{
+					margin: 10% 0 0 0;
+				}
+				a{
+					text-decoration: none;
+					color: $amarilloPrimario;
+				}
+				.read-more-btn{
+					background: $amarilloPrimario;
+					color: $blanco;
+					padding: 8px 10px;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+}
+
+// Tienda
+
+#help{
+	text-align: left;
+    margin: 15px 0;
+    .ayuda-tienda{
+	    padding: 10px 15px;
+		background: $amarilloPrimario;
+		text-decoration: none;
+		color: black;
+    }
+    .content-helpForm{
+	    float: left;
+	    width: 100%;
+	    background: $amarilloPrimario;
+	    padding: 20px;
+	    border-radius: 0 10px 10px 10px;
+	    .col-md-12{
+		    padding: 15px;
+		    background: $blanco;
+		    border-radius: 10px;
+		    .form-control{
+			    margin: 5px 0;
+		    }
+	    }
+    }
+}
+
+.woocommerce{
+	@extend .full;
+	
+	
+	// Checkout
+	.woocommerce-order{
+		.woocommerce-notice{
+			background: $amarilloPrimario;
+			font-size: 2rem;
+			color: $blanco;
+			padding: 1rem;
+		}
+	}
+	
+	.woocommerce-order-details{
+		h2{
+			font-size: 2rem;
+			color: $amarilloPrimario;
+		}
+	}
+	
+	a.button{
+		background: $amarilloPrimario !important;
+	}
+	
+	ul.products{
+		li.product{
+			display: inline-block;
+			width: 25% !important;
+			padding: 15px;
+			margin: 0 !important;
+			text-align: center;
+			.price{
+				color: $amarilloPrimario !important;
+				font-size: 2rem !important;
+			}
+			
+			.woocommerce-loop-product__title{
+				font-size: 2.2rem !important;
+				font-weight: 400 !important;
+			}
+		}
+	}
+	
+	.woocommerce-info{
+		border-top-color:  $amarilloPrimario !important;
+	}
+	.woocommerce-billing-fields__field-wrapper{
+		input{
+			padding: 5px !important;
+			border-radius: 5px !important;
+			border: 2px solid #e1e1e1 !important;
+		}
+		
+		select{
+			padding: 5px !important;
+			border-radius: 5px !important;
+			border: 2px solid #e1e1e1 !important;
+		}
+		
+		label{
+			color: $amarilloPrimario;
+		}
+	}
+	
+	.woocommerce-additional-fields__field-wrapper{
+		textarea{	
+			padding: 5px !important;
+			border-radius: 5px !important;
+			border: 2px solid #e1e1e1 !important;
+		}
+		
+		label{
+			color: $amarilloPrimario;
+		}
+	}
+	
+	div.product{
+		.product_title{
+			font-size: 2.5rem !important;
+			font-weight: bold !important;
+		}
+		
+		.price{
+			color: $amarilloPrimario !important;
+			font-size: 2.5rem !important;
+			font-style: italic !important;
+			font-weight: bold !important;
+			text-align: center;
+		}
+		
+		form.cart{
+			.button{
+				background: #e1e1e1;
+				color: #000;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+		}
+	}
+	
+	table.shop_table{
+		border: none !important;
+		th{
+			font-weight: 400 !important;
+		}
+	}
+	
+	h3{
+		font-size: 1.8rem;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	
+	#order_review_heading{
+		font-weight: bold;
+	}
+
+	.related{
+		& > h2{
+			position: relative !important;
+			text-align: center !important;
+			font-weight: bold !important;
+			text-transform: uppercase !important;
+			&:after{
+				margin-top: 20px;
+				content: "";
+				position: absolute;
+				background: $amarilloPrimario;
+				padding: 3px 30px;
+				left: 48%;
+				bottom: -10px;
+			}
+		}
+	}
+	
+	ul.products{
+		li.product{ 
+			.woocommerce-loop-product__title{
+				font-size: 1.5rem !important;
+				text-align: center !important;
+				color: #000 !important;
+			}
+		}
+	}
+}
+
+#store-head{
+	@extend .full;
+	margin-bottom: 40px;
+	.carrusel-tienda{
+		position: relative;
+		.item{
+			img{
+				width: 100%;
+			}
+			.carrusel-caption{
+				width: 45%;
+				position: absolute;
+				right: 0;
+				text-align: right;
+				top: 15%;
+				padding: 20px;
+				font-size: 3.4rem;
+				color: $blanco;
+				text-shadow: 0 0 40px #000;
+				background: rgba($amarilloPrimario, .5);
+			}
+		}
+	}
+	
+	.store-categories{
+		position: absolute;
+		bottom: -20px;
+		background: #f1f1f1;
+		width: 80%;
+		margin-left: 10%;
+		box-shadow: 0 4px 10px #e1e1e1;
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			text-align: center;    
+			float: left;
+			margin: 0 0 0 20%;
+			li{
+				display: inline-block;
+				float: left;
+				&:last-child a{
+					border: none;
+				}
+				a{
+					display: inline-block;
+					padding: 1.5rem 4rem;
+					font-size: 1.7rem;
+					color: $grisOscuro;
+					text-transform: uppercase;
+					border-right: 1px solid $amarilloPrimario;
+					transition: .3s;
+					&:hover{
+						text-decoration: none;
+						background: $amarilloPrimario;
+					}
+				}
+			}
+		}
+	}
+}
+
+.tienda{
+	.woocommerce-products-header{
+		h1{
+			background: $amarilloPrimario;
+			display: inline-block;
+			color: $blanco;
+			font-size: 2.4rem;
+			padding: 8px;
+			margin-top: 0;
+		}
+	}
+}
+
+.widgets-tienda{
+	list-style: none;
+	padding: 0 15px 0 0;
+	margin: 0;
+	.widget-title{
+		margin-bottom: 10px;
+	}
+	
+	.widget{
+		input[type=search]{
+			width: 136px;
+		}
+		
+		input[type=submit]{
+			height: 26px;
+			width: 38px;
+		}
+	}
+	
+	.woocommerce-Price-amount{
+		color: $amarilloPrimario;
+		font-weight: bold;
+		font-size: 1.6rem;
+		margin-top: .8rem;
+	}
+	
+	.product-title{
+		font-weight: 400;
+	}
+	
+	.ui-slider-range{
+		background: $amarilloPrimario !important;
+	}
+}
+/* ======= ALINEACIONES ======= */
+.img-full{
+	width: 100%;
+	height: auto;
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.625em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.625em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
+	display: block;
+}
+
+/*======= MEDIA QUERIES =======*/
+
+/* == iPad Horizontal == */
+@media (max-width: 1024px){
+
+}
+
+/* == iPad Vertical == */
+@media (max-width:768px){
+	
+	// Ajustes Header
+	#masthead{
+		.logo{
+			width: 220px;
+			float: left;
+			margin: 3px;
+		}
+		
+		#mastmenu{
+			ul{
+				padding: 90px 0;
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				background: #f3b610;
+				top: 0;
+				left: 0;
+				margin-left: 100%;
+				z-index: 100;
+				li{
+					display: block;
+					text-align: right;
+					padding: 15px 25px;
+					border-bottom: 1px solid #f1f1f1;
+				}
+			}
+		}
+	}	
+	
+	// Ajustes Home
+	
+	#home{
+		.texto-imagen{
+			h2{
+				font-size: 24px;
+			}
+			
+			p{
+				font-size: 25px;
+			}
+		}
+	}
+	
+	
+	// Ajustes generales	
+	#post-wraps{
+		z-index: 1;
+	}
+	
+	.mob-only{
+		display: block;
+	}
+		
+	.mob-trigger{
+		color: #B33535 !important;
+		font-size: 30px;
+		position: absolute;
+		right: 30px;
+		z-index: 1000;
+		text-decoration: none !important;
+	}
+	//Ajuste Nota
+	.single-post{
+		z-index: 1;
+		.post-thumbnail{
+			margin-bottom: 166px;
+			box-shadow: none;
+			.post-titulos{
+					top: 40%;
+				h2{
+					font-size: 20px;
+				}
+			}	
+		}
+	}
+	.post-contenido{
+		box-shadow: none !important;
+		padding: 15px !important;
+		.post-entry{
+			font-size: 1.5rem;
+			img{
+				width: 610px;
+				height: 347px;
+			}
+		}
+		.post-author{
+				text-align: center;
+			.titulo-post-author{
+				h1{
+					font-size: 27px;				
+				}
+			}
+			.info-author{
+				.redes-sociales{
+					margin: 0 30px 30px 80px;
+					ul{
+    					margin: 15px 0 0 0;
+						li{
+							display: inline-block;
+							font-size: 25px;
+							padding-right: 70px;
+							a{
+								display: block;
+								font-size: 45px;
+								padding: 0;
+							}
+						}
+					}
+				}
+				.img-author{
+					width: 200px;
+					display: block;
+					img{
+						margin-left: 205px;
+					}
+				}
+				.bio-author{
+					display: block;
+					h1{
+						font-size: 30px;
+					}
+				}
+			}
+		}
+		.post-tags{
+			a{
+				padding: 6px !important; 
+				font-size: 16px !important;				
+   				margin: 5px 3px 10px 10px !important;
+			}
+		}
+		.widget{
+			display: none;
+		}
+	}
+
+	//Ajustes Blog
+	#blog{
+		.grid{
+			z-index: 1;
+		}
+		.widget{
+			display: none;
+		}		
+	}
+
+	//Ajustes Busqueda
+	#busq{
+		.lista-perros{
+			.foto-perro{
+				width: 218px;
+				height: 218px;
+			}
+		}
+		
+		.img-destacada-busq {
+			.t1{
+				h1{
+					margin-left: 40px;
+				}
+				.ea{
+					margin-left: 70px;
+				}
+			}
+			.t2{
+				h1{
+					margin-right: 40px;
+				}
+				.ea{
+					margin-right: 70px;
+				}
+			}
+			.titulos{
+				.ea{
+					padding: 6px 10px;
+					box-shadow: none;
+				}
+				top: 25%;
+				h1{
+					font-size: 25px;
+				}
+			}
+		}
+		.ultimas-reportadas{
+			margin-left: 35px;
+			p{				
+   				margin-left: -45px;
+			}
+			.biblio{
+				img{
+					max-width: 85%;
+				}
+			}
+		}
+	}
+
+	//Ajustes Libreria
+	#lib{
+		.biblioteca{
+			.biblio{
+				.fondo-nota{
+					height: 370px;
+				}
+			}
+		}
+	}
+
+	// Ajustes Directorios
+	.directorio{
+		.container{
+			.row{				
+				.serch-bar{
+					display: none;
+				}
+			}
+		}
+	}
+	#mastfooter{
+		position: fixed !important;
+		bottom: 0 !important;
+	}
+}
+
+/* == iPhone 6s Plus == */
+@media (max-width:414px){
+
+	// Ajustes Header
+	#masthead{
+		.logo{
+			width: 120px;
+			margin-left: 30px;
+		}
+	}	
+	
+	// Ajustes Home
+	
+	#home{
+		.texto-imagen{
+			width: 60%;
+			h2{
+				font-size: 17px;
+			}
+			
+			p{
+				font-size: 17px;
+			}
+		}
+		.main-text{
+			font-size: 16px;
+		}
+	}
+
+	// Ajustes Nota
+	.single-post{
+		z-index: 1;
+		.post-thumbnail{
+			margin-bottom: 166px;
+			box-shadow: none;
+			.post-titulos{
+				h2{
+					font-size: 20px;
+				}
+			}	
+		}
+	}
+	.post-contenido{
+		box-shadow: none !important;
+		padding: 15px !important;
+		.post-entry{
+			img{
+				width: 313px;
+				height: 218px;
+			}
+		}
+		.post-author{
+				text-align: center;
+			.titulo-post-author{
+				h1{
+					font-size: 27px;				
+				}
+			}
+			.info-author{
+				.redes-sociales{
+					margin-left: 0;
+					ul{
+    					margin: 15px 0 0 0;
+						li{
+							display: inline-block;
+							font-size: 25px;
+							padding-right: 30px;
+							a{
+								display: block;
+								padding: 0;
+							}
+						}
+					}
+				}
+				.img-author{
+					width: 200px;
+					margin: 18px 0 15px 15px;
+					img{
+						margin-left: 45px;
+					}
+				}
+				.bio-author{
+					h1{
+						font-size: 30px;
+					}
+				}
+			}
+		}
+		.post-tags{
+			a{
+				padding: 4px !important; 
+				font-size: 13px !important;				
+   				margin: 5px 3px 10px 10px !important;
+			}
+		}
+		.widget{
+			display: none;
+		}
+	}
+
+	//Ajustes Blog
+	#blog{
+		#sec-menu{
+			a{
+				font-size: 12px;
+			}
+		}
+		#suscribe{
+			input{
+				margin-right: 0;
+			}
+			#nombre{
+				margin: 15px 0;
+			}
+			#correo{
+				margin-bottom: 15px;
+			}
+		}
+		.grid{
+			z-index: 1;
+			.featured-posts{
+				.datos-del-post{
+					.category-name{
+						a{
+							padding: 4px;
+							font-size: 15px;
+						}
+					}
+					h2{
+						a{
+							font-size: 13px;
+						}
+					}
+				}
+			}
+		}
+		.posts-wrap{
+			.post-list{
+				.post-entries{
+					a{
+						padding: 2px 10px;
+					}
+				}
+			}
+		}
+		.widget{
+			display: none;
+		}		
+	}
+
+	//Ajustes Busqueda
+	#hidden-form{
+		.formulario-oculto{
+			.forma{
+				width: 90%;
+			}
+		}
+	}
+	#busq{
+		.img-destacada-busq {
+			.t1{
+				h1{
+					margin-left: 8px;
+				}
+				.ea{
+					margin-left: 35px;
+				}
+			}
+			.t2{
+				h1{
+					margin-right: 8px;
+				}
+				.ea{
+					margin-right: 35px;
+				}
+			}
+			.titulos{
+				width: 155px;
+				.ea{
+					padding: 2px 4px;
+					box-shadow: none;
+					font-size: 10px;
+				}
+				top: 25%;
+				h1{
+					font-size: 16px;
+				}
+			}
+		}
+		.ultimas-reportadas{
+			margin-left: 46px;
+			p{				
+   				margin-left: -45px;
+   				font-size: 12px;
+			}
+			.biblio{
+				img{
+					max-width: 85%;
+				}
+			}
+		}
+		#nav-pag-busq{
+			ul{
+				li{
+					.navegacion{
+						width: 74px;
+					    font-size: 10px;
+					    height: 25px;
+					    line-height: 25px;
+					}
+					.numeros{
+						width: 25px;
+					    font-size: 10px;					
+					    height: 25px;
+					    line-height: 25px;
+					}			
+				}
+			}
+		}
+	}
+
+	//Ajustes libreria
+	#lib{
+		#buscador{
+			padding: 20px;
+			.busca{
+				margin-top: -5px;
+				.antes-lupa{
+					width: 200px !important;
+					margin-left: 25px;
+				}
+				p{
+					font-size: 15px;
+				}
+			}
+		}
+		.biblioteca{
+			.biblio{
+				.fondo-nota{
+					width: 295px;
+					margin-left: 30px;
+					height: 410px;
+					img{
+						margin-left: 18px;
+					}
+					.boton-general{
+						width: 100%;
+						height: 0;
+						line-height: 0;
+						padding: 20px;
+					}
+				}
+			}
+		}
+		#nav-pag{
+			ul{
+				li{
+					.navegacion{
+						width: 74px;
+					    font-size: 10px;
+					    height: 25px;
+					    line-height: 25px;
+					}
+					.numeros{
+						width: 25px;
+					    font-size: 10px;					
+					    height: 25px;
+					    line-height: 25px;
+					}			
+				}
+			}			
+		}
+	}
+	
+	// Busqueda
+	
+	#busq{
+		.ultimas-reportadas{
+			margin-left: 0;
+		}
+		
+		.lista-perros{
+			.foto-perro{
+				width: 100%;
+				height: auto;
+				text-align: center;
+			}
+		}
+	}
+	
+	// Ajustes footer
+	#mastfooter{
+		font-size: 9px;
+	}
+	
+	#store-head{
+		.store-categories{
+			display: none;
+		}
+		
+		.carrusel-tienda{
+			.item{
+				.carrusel-caption{
+					width: 100%;
+					bottom: 0;
+					top: inherit;
+				}	
+			}
+		}	  
+	}
+	
+	.woocommerce{
+		ul.products{
+			li.product{
+				width: 50% !important;
+			}
+		}
+	}
+	
+	.widgets-tienda, .tienda{
+		width: 100%;
+		float: left;
+		clear: both;
+	}
+	
+	.widgets-tienda .widget input[type=search]{
+		width: 88%;
+	}
+	
+	
+	#af-wrapper{
+		.post-author, .post-message{
+			display: inline-block;
+		}
+		
+		.post-author{
+			width: 30%;
+		}
+		
+		.post-message{
+			width: 70%;
+		}
+	}
+}
+
+/* ======= Chat ======= */
+#PureChatWidget.purechat.purechat-bottom-left{
+	bottom: 0 !important;
+}
+
+/* == Smartphone == */
+@media (max-width:360px){
+
+}
